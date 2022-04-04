@@ -1,14 +1,22 @@
 import React from "react";
-import useComments from "../../hooks/useComments";
+import { Link } from "react-router-dom";
+import useReviews from "../../hooks/useReviews";
 import Review from "../Review/Review";
+import "./Reviews.css";
 
 const Reviews = () => {
-  const [comments, setComments] = useComments;
+  const [reviews, setReiews] = useReviews([]);
+  console.log(reviews);
   return (
     <div>
-      {comments.map((comment) => (
-        <Review comment={comment}></Review>
-      ))}
+      <div className="reviews-container">
+        {reviews.slice(0, 3).map((review) => (
+          <Review key={review.id} review={review}></Review>
+        ))}
+      </div>
+      <Link to="review">
+        <button>See all reviews</button>
+      </Link>
     </div>
   );
 };

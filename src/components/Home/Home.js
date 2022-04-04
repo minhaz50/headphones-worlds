@@ -1,11 +1,10 @@
 import React from "react";
-import useComments from "../../hooks/useComments";
 import Reviews from "../Reviews/Reviews";
+// import useReviews from "../../hooks/useReviews";
+
 import "./Home.css";
 
 const Home = () => {
-  const [comments, setComments] = useComments();
-  console.log(comments);
   return (
     <div className="home-container">
       <div className="text-img-conatiner">
@@ -27,9 +26,7 @@ const Home = () => {
       </div>
       <div className="comments-container">
         <h1>Customer Review</h1>
-        {comments.map((comment) => (
-          <Reviews key={comment.id} comment={comment}></Reviews>
-        ))}
+        <Reviews />
       </div>
     </div>
   );

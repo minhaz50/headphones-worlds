@@ -1,10 +1,15 @@
 import React from "react";
+import "./review.css";
 
 const Review = (props) => {
-  const { name } = props.comment;
+  const { name, body, ratings } = props.review;
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className="review-container">
+      <div>
+        <h3>Customer Name: {name}</h3>
+        <p>{body}</p>
+        <h3>Ratings: {ratings}</h3>
+      </div>
     </div>
   );
 };
