@@ -15,7 +15,7 @@ const Reviews = () => {
         ))}
       </div>
       <Link to="review">
-        <button>See all reviews</button>
+        <button className="review-btn">See all reviews</button>
       </Link>
     </div>
   );
