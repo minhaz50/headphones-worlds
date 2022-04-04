@@ -1,9 +1,10 @@
 import React from "react";
 
-const Reviews = () => {
+const Reviews = ({ comment }) => {
+  const { name } = comment;
   return (
     <div>
-      <h3>This is Reviews.</h3>
+      <h3>This is Reviews.{name}</h3>
     </div>
   );
 };
