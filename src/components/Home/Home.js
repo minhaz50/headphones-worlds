@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import useReviews from "../../hooks/useReviews";
+import Review from "../Review/Review";
 import Reviews from "../Reviews/Reviews";
-// import useReviews from "../../hooks/useReviews";
 
 import "./Home.css";
 
 const Home = () => {
+  const [reviews, setReviews] = useReviews();
   return (
     <div className="home-container">
       <div className="text-img-conatiner">
@@ -24,10 +27,15 @@ const Home = () => {
           <img src="./Headphones-Transparent-PNG.png" alt="" />
         </div>
       </div>
-      <div className="comments-container">
-        <h1>Customer Review</h1>
-        <Reviews />
+      <h1>Customer Reviews (3)</h1>
+      <div className="home-reviews-container">
+        {reviews.slice(0, 3).map((review) => (
+          <Review review={review}></Review>
+        ))}
       </div>
+      <Link to="/review">
+        <button className="review-btn">See all Reviews</button>
+      </Link>
     </div>
   );
 };

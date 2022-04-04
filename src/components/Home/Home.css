@@ -28,3 +28,6 @@
   font-size: 20px;
   border: 0;
 }
+.home-reviews-container {
+  display: flex;
+}

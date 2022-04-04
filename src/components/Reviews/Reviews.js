@@ -10,7 +10,7 @@ const Reviews = () => {
   return (
     <div>
       <div className="reviews-container">
-        {reviews.slice(0, 3).map((review) => (
+        {reviews.map((review) => (
           <Review key={review.id} review={review}></Review>
         ))}
       </div>
