@@ -1,10 +1,14 @@
 import React from "react";
+import useComments from "../../hooks/useComments";
+import Review from "../Review/Review";
 
-const Reviews = ({ comment }) => {
-  const { name } = comment;
+const Reviews = () => {
+  const [comments, setComments] = useComments;
   return (
     <div>
-      <h3>This is Reviews.{name}</h3>
+      {comments.map((comment) => (
+        <Review comment={comment}></Review>
+      ))}
     </div>
   );
 };
