@@ -30,4 +30,6 @@
 }
 .home-reviews-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
